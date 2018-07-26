@@ -8,7 +8,7 @@ import { findLast } from '@angular/compiler/src/directive_resolver';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //tempData: Data = new Data();
+  
   listOfTodos: Data[] = [
     { id: 1, name: 'Clean up' },
     { id: 2, name: 'Learn smart' },
