@@ -10,7 +10,7 @@ import { NgModel } from '@angular/forms';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-    public data: Data;
+    public data: Data = new Data();
   
     @Output() public addToDo: EventEmitter<string> = new EventEmitter();
   runAddToDo(): void {
