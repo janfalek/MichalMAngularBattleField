@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Data } from './data';
+import { findLast } from '../../node_modules/@angular/compiler/src/directive_resolver';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,14 @@ export class ToDoService {
     { id: 10, name: 'Take care' }
   ];
   constructor() { }
+   nextid: number = this.listOfTodos.length;
 
-  public AddToDo(name: string){
-    //add name as new to do at last postition of list
-    console.log(name);
+  public AddToDo(newName: string){
+        
+    this.listOfTodos.push({
+      id: this.nextid, name: newName
+    });
+    this.nextid++;
+      console.log(newName);
   }
 }
