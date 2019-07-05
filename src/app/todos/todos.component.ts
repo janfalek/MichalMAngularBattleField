@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, NgModule } from '@angular/core';
+import { Component, OnInit, Input, NgModule, Output } from '@angular/core';
 import { Data } from '../data';
+import { ToDoService } from '../to-do.service';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-todos',
@@ -7,10 +9,15 @@ import { Data } from '../data';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-@Input() todos: Data[];
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+  
+  @Output() exitData = new EventEmitter();
+  @Input() todos: Data[];
+
+  
+  
 
 }
